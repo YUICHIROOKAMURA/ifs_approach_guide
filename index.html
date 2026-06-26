@@ -1,0 +1,663 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>IFSアプローチ完全ガイド - 内なる家族システム療法の理解と実践</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body {
+    font-family: 'Helvetica Neue', Arial, 'Hiragino Kaku Gothic ProN', 'Hiragino Sans', Meiryo, sans-serif;
+    line-height: 1.8; color: #2D3748;
+    background: linear-gradient(to bottom, #F7FAFC 0%, #EDF2F7 100%);
+}
+.container { max-width: 900px; margin: 0 auto; padding: 20px; }
+header {
+    background: linear-gradient(135deg, #2C7A7B 0%, #38B2AC 100%);
+    color: white; padding: 60px 20px; text-align: center;
+    border-radius: 0 0 30px 30px; box-shadow: 0 4px 20px rgba(44, 122, 123, 0.3);
+    margin-bottom: 40px;
+}
+h1 { font-size: 2.5em; margin-bottom: 20px; font-weight: 700; }
+.subtitle { font-size: 1.2em; opacity: 0.95; margin-bottom: 10px; }
+section {
+    background: white; padding: 40px; margin-bottom: 30px;
+    border-radius: 15px; box-shadow: 0 2px 15px rgba(0, 0, 0, 0.08);
+    animation: fadeIn 0.6s ease-out;
+}
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+h2 {
+    font-size: 2em; color: #2C7A7B; margin-bottom: 25px;
+    padding-bottom: 15px; border-bottom: 3px solid #38B2AC;
+    display: flex; align-items: center; gap: 15px;
+}
+h3 {
+    font-size: 1.5em; color: #2D3748; margin: 30px 0 15px 0;
+    display: flex; align-items: center; gap: 10px;
+}
+p { margin-bottom: 20px; font-size: 1.05em; }
+.intro-box {
+    background: linear-gradient(135deg, #EDF2F7 0%, #E6FFFA 100%);
+    padding: 30px; border-radius: 12px; border-left: 5px solid #2C7A7B;
+    margin-bottom: 30px;
+}
+.intro-question { font-size: 1.3em; font-weight: 600; color: #2C7A7B; margin-bottom: 15px; }
+.parts-system {
+    display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px; margin: 30px 0;
+}
+.part-card {
+    padding: 25px; border-radius: 12px; border: 2px solid; transition: all 0.3s ease;
+}
+.part-card:hover { transform: translateY(-5px); box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15); }
+.exile-card {
+    background: linear-gradient(135deg, #FFF5F5 0%, #FED7D7 100%);
+    border-color: #E53E3E;
+}
+.manager-card {
+    background: linear-gradient(135deg, #EBF8FF 0%, #BEE3F8 100%);
+    border-color: #4299E1;
+}
+.firefighter-card {
+    background: linear-gradient(135deg, #FFFAF0 0%, #FEEBC8 100%);
+    border-color: #ED8936;
+}
+.self-card {
+    background: linear-gradient(135deg, #E6FFFA 0%, #B2F5EA 100%);
+    border-color: #2C7A7B;
+}
+.part-icon { font-size: 2.5em; margin-bottom: 15px; }
+.part-title { font-size: 1.3em; font-weight: 700; margin-bottom: 10px; }
+.flow-diagram { background: #F7FAFC; padding: 30px; border-radius: 12px; margin: 30px 0; }
+.flow-step {
+    display: flex; align-items: flex-start; margin-bottom: 20px;
+    padding: 20px; background: white; border-radius: 10px;
+    border-left: 4px solid #2C7A7B; transition: all 0.3s ease;
+}
+.flow-step:hover { box-shadow: 0 4px 15px rgba(44, 122, 123, 0.2); }
+.flow-number {
+    background: #2C7A7B; color: white; width: 40px; height: 40px;
+    border-radius: 50%; display: flex; align-items: center; justify-content: center;
+    font-weight: 700; font-size: 1.2em; margin-right: 20px; flex-shrink: 0;
+}
+.flow-content h4 { color: #2C7A7B; font-size: 1.2em; margin-bottom: 8px; }
+.accordion { margin: 20px 0; }
+.accordion-item {
+    background: white; border: 1px solid #E2E8F0; border-radius: 10px;
+    margin-bottom: 15px; overflow: hidden; transition: all 0.3s ease;
+}
+.accordion-item:hover { box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); }
+.accordion-header {
+    padding: 20px; cursor: pointer; display: flex;
+    justify-content: space-between; align-items: center;
+    background: #F7FAFC; font-weight: 600; font-size: 1.1em;
+    color: #2D3748; transition: all 0.3s ease;
+}
+.accordion-header:hover { background: #EDF2F7; }
+.accordion-header i { transition: transform 0.3s ease; }
+.accordion-header.active i { transform: rotate(180deg); }
+.accordion-content { max-height: 0; overflow: hidden; transition: max-height 0.3s ease; }
+.accordion-content-inner { padding: 20px; background: white; }
+.eight-c-grid {
+    display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px; margin: 30px 0;
+}
+.c-item {
+    background: linear-gradient(135deg, #E6FFFA 0%, #B2F5EA 100%);
+    padding: 20px; border-radius: 10px; text-align: center;
+    border: 2px solid #2C7A7B; transition: all 0.3s ease;
+}
+.c-item:hover { transform: translateY(-3px); box-shadow: 0 6px 15px rgba(44, 122, 123, 0.2); }
+.c-item i { font-size: 2em; color: #2C7A7B; margin-bottom: 10px; }
+.c-item h4 { color: #2C7A7B; font-size: 1.1em; margin-bottom: 8px; }
+.case-box {
+    background: #FFFAF0; border-left: 5px solid #ED8936;
+    padding: 25px; border-radius: 10px; margin: 25px 0;
+}
+.case-box h4 {
+    color: #ED8936; font-size: 1.2em; margin-bottom: 15px;
+    display: flex; align-items: center; gap: 10px;
+}
+.evidence-box {
+    background: #EBF8FF; border-left: 5px solid #4299E1;
+    padding: 25px; border-radius: 10px; margin: 25px 0;
+}
+.evidence-box h4 {
+    color: #4299E1; font-size: 1.2em; margin-bottom: 15px;
+    display: flex; align-items: center; gap: 10px;
+}
+.warning-box {
+    background: #FFF5F5; border-left: 5px solid #E53E3E;
+    padding: 25px; border-radius: 10px; margin: 25px 0;
+}
+.warning-box h4 {
+    color: #E53E3E; font-size: 1.2em; margin-bottom: 15px;
+    display: flex; align-items: center; gap: 10px;
+}
+ul, ol { margin: 20px 0 20px 30px; }
+li { margin-bottom: 12px; font-size: 1.05em; }
+.highlight {
+    background: linear-gradient(transparent 60%, #B2F5EA 60%);
+    font-weight: 600; padding: 2px 4px;
+}
+.system-diagram {
+    background: white; padding: 40px; border-radius: 15px;
+    margin: 30px 0; box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+}
+.system-layer {
+    margin-bottom: 30px; padding: 25px; border-radius: 12px; position: relative;
+}
+.layer-exile {
+    background: linear-gradient(135deg, #FFF5F5 0%, #FED7D7 100%);
+    border: 3px solid #E53E3E;
+}
+.layer-protector {
+    background: linear-gradient(135deg, #F0F9FF 0%, #E0F2FE 100%);
+    border: 3px solid #3B82F6;
+}
+.layer-self {
+    background: linear-gradient(135deg, #ECFDF5 0%, #D1FAE5 100%);
+    border: 3px solid #2C7A7B;
+}
+.layer-title {
+    font-size: 1.4em; font-weight: 700; margin-bottom: 15px;
+    display: flex; align-items: center; gap: 10px;
+}
+.protector-split {
+    display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-top: 15px;
+}
+.protector-type { padding: 20px; border-radius: 10px; background: white; }
+.manager-type { border-left: 4px solid #4299E1; }
+.firefighter-type { border-left: 4px solid #ED8936; }
+.references { background: #F7FAFC; padding: 30px; border-radius: 12px; margin-top: 30px; }
+.references h3 { color: #2C7A7B; margin-bottom: 20px; }
+.reference-item {
+    padding: 15px; background: white; border-radius: 8px;
+    margin-bottom: 15px; border-left: 3px solid #2C7A7B;
+}
+.reference-item a { color: #2C7A7B; text-decoration: none; font-weight: 600; }
+.reference-item a:hover { text-decoration: underline; }
+footer { text-align: center; padding: 40px 20px; color: #718096; font-size: 0.95em; }
+@media (max-width: 768px) {
+    h1 { font-size: 2em; }
+    h2 { font-size: 1.6em; }
+    section { padding: 25px; }
+    .parts-system { grid-template-columns: 1fr; }
+    .protector-split { grid-template-columns: 1fr; }
+    .eight-c-grid { grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); }
+}
+</style>
+</head>
+<body>
+<header>
+<div class="container">
+<h1><i class="fas fa-users"></i> IFSアプローチ完全ガイド</h1>
+<p class="subtitle">Internal Family Systems療法：内なる家族システムを理解し、セルフ主導の支援を実践する</p>
+<p style="font-size: 0.95em; margin-top: 15px;">就労移行支援スタッフのための実践的理解</p>
+</div>
+</header>
+
+<div class="container">
+<section>
+<h2><i class="fas fa-question-circle"></i> 内なる声の正体</h2>
+<div class="intro-box">
+<p class="intro-question">「明日のプレゼン、失敗したらどうしよう」と不安になっている自分と、「大丈夫、準備はできている」と励ます自分。</p>
+<p class="intro-question">「甘いものが食べたい」という衝動と、「ダイエット中だから我慢しよう」という声。</p>
+<p style="margin-bottom: 0;">こうした<span class="highlight">複数の「声」や「自分」</span>を感じたことはありませんか?</p>
+</div>
+<p>私たちの心の中には、まるで複数の人格が共存しているかのように、異なる感情、思考、衝動が存在します。ある時は互いに協力し、ある時は対立する。この現象を単なる「気持ちの揺れ」として片付けるのではなく、<span class="highlight">心の内部に存在する「システム」</span>として理解し、それぞれの声の背後にある意図を丁寧に聴いていく——これがIFSアプローチの核心です。</p>
+<p>IFS（Internal Family Systems: 内的家族システム療法）は、アメリカの心理学者Richard Schwartz博士が1980年代に開発した心理療法モデルです。従来の心理療法が「一つの自我」を前提としていたのに対し、IFSは<span class="highlight">心の多元性を正常で自然な状態</span>として捉え、その複雑なシステムを理解し調和させることを目指します。</p>
+<p>就労移行支援の現場では、利用者の方々が「働きたい気持ち」と「不安で動けない気持ち」の間で揺れ動く場面に頻繁に遭遇します。IFSの視点は、こうした内的葛藤を「矛盾」や「問題」ではなく、<span class="highlight">それぞれに正当な理由を持つ複数の部分の対話</span>として理解する手がかりを提供してくれます。</p>
+</section>
+
+<section>
+<h2><i class="fas fa-lightbulb"></i> IFSとは何か：3つの基本前提</h2>
+<p>IFSアプローチは、以下の3つの革新的な前提に基づいています。これらは単なる理論ではなく、臨床実践と研究から導かれた、人間の心の働きについての理解の枠組みです。</p>
+<div class="accordion">
+<div class="accordion-item">
+<div class="accordion-header">
+<span><i class="fas fa-puzzle-piece"></i> 前提1：心は自然に多元的である（Multiplicity of Mind）</span>
+<i class="fas fa-chevron-down"></i>
+</div>
+<div class="accordion-content">
+<div class="accordion-content-inner">
+<p>人間の心は単一の「自我」ではなく、<span class="highlight">複数の「部分（Parts）」から構成されている</span>のが自然な状態です。これは病理ではなく、むしろ心の柔軟性と適応力を示しています。</p>
+<p><strong>具体例：</strong></p>
+<ul>
+<li>職場では「責任感の強い管理職」の部分が主導的</li>
+<li>家族といる時は「やさしい親」の部分が前に出る</li>
+<li>趣味に没頭する時は「自由な子ども」の部分が活性化</li>
+</ul>
+<p>これらの部分はそれぞれ独自の視点、感情、記憶、目的を持っています。IFSでは、これを病的な「解離」とは区別し、<span class="highlight">適応的で機能的なシステム</span>として捉えます。</p>
+<div class="warning-box">
+<h4><i class="fas fa-exclamation-triangle"></i> 解離性障害との違い</h4>
+<p>IFSの「部分」は、解離性同一性障害（DID）における「別人格」とは異なります。IFSの部分は記憶の連続性を保ち、セルフの意識下にあります。ただし、重度のトラウマを持つクライアントでは、部分間の境界がより明確になることがあり、慎重なアセスメントが必要です。</p>
+</div>
+</div>
+</div>
+</div>
+
+<div class="accordion-item">
+<div class="accordion-header">
+<span><i class="fas fa-gem"></i> 前提2：セルフ（Self）の存在</span>
+<i class="fas fa-chevron-down"></i>
+</div>
+<div class="accordion-content">
+<div class="accordion-content-inner">
+<p>すべての人の中核には、<span class="highlight">傷ついていない、本質的な「セルフ」が存在する</span>という前提です。セルフは部分の一つではなく、部分を観察し、導き、癒す能力を持つ中心的存在です。</p>
+<p>セルフは「8つのC」と呼ばれる特性で特徴づけられます：</p>
+<ul>
+<li><strong>Compassion（思いやり）</strong>：自他への深い共感</li>
+<li><strong>Curiosity（好奇心）</strong>：判断せずに理解しようとする姿勢</li>
+<li><strong>Clarity（明晰さ）</strong>：物事を明確に見る能力</li>
+<li><strong>Calm（穏やかさ）</strong>：内的な平静</li>
+<li><strong>Confidence（自信）</strong>：自己への信頼</li>
+<li><strong>Courage（勇気）</strong>：困難に向き合う強さ</li>
+<li><strong>Creativity（創造性）</strong>：新しい解決を見出す力</li>
+<li><strong>Connectedness（つながり）</strong>：自他との一体感</li>
+</ul>
+<p><strong>臨床的意義：</strong>セルフの存在を信じることで、セラピストは「クライアントを直す」のではなく、<span class="highlight">クライアント自身のセルフが内的システムを癒すのを助ける</span>というスタンスを取ることができます。</p>
+</div>
+</div>
+</div>
+
+<div class="accordion-item">
+<div class="accordion-header">
+<span><i class="fas fa-shield-alt"></i> 前提3：すべての部分は元々善意である（No Bad Parts）</span>
+<i class="fas fa-chevron-down"></i>
+</div>
+<div class="accordion-content">
+<div class="accordion-content-inner">
+<p>どんなに破壊的に見える部分であっても、<span class="highlight">元々はその人を守るための保護的意図を持っていた</span>という前提です。</p>
+<p><strong>例：</strong></p>
+<ul>
+<li><strong>自己批判的な声：</strong>「お前はダメだ」→実は失敗から守ろうとする保護者</li>
+<li><strong>回避行動：</strong>「面接を避ける」→過去の拒絶体験から心を守る戦略</li>
+<li><strong>過食・過飲酒：</strong>痛みを即座に消そうとする緊急対応部隊</li>
+</ul>
+<div class="case-box">
+<h4><i class="fas fa-user-circle"></i> 就労支援での実例</h4>
+<p>ある利用者が面接前日に必ず体調を崩す。従来なら「逃避」「甘え」と見なされがちですが、IFS視点では「過去の失敗体験から心を守ろうとする部分」の働きと理解できます。その部分に感謝を示しつつ、「今は別の方法で守れるかもしれない」と対話することで、新しい対処法が見つかることがあります。</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+
+<section>
+<h2><i class="fas fa-sitemap"></i> 心のシステム構造：3層アーキテクチャ</h2>
+<p>IFSでは、心の部分を3つの主要なカテゴリーに分類します。これは単なる分類ではなく、<span class="highlight">部分同士がどのように相互作用し、システム全体がどう機能しているか</span>を理解するための地図です。</p>
+
+<div class="system-diagram">
+<div class="system-layer layer-self">
+<div class="layer-title"><i class="fas fa-star"></i> セルフ（Self）- システムの中核</div>
+<p>すべての部分を観察し、調和させる存在。傷ついていない本質的なあなた。8つのC特性を持ち、判断せず、好奇心を持って内的システムに接する能力を持つ。</p>
+</div>
+
+<div class="system-layer layer-protector">
+<div class="layer-title"><i class="fas fa-shield-alt"></i> プロテクター（Protectors）- 保護システム</div>
+<p>エグザイル（追放された部分）を守るために働く部分。痛みが意識に上ることを防ぐ。2種類の保護戦略を使う：</p>
+<div class="protector-split">
+<div class="protector-type manager-type">
+<h4><i class="fas fa-user-tie"></i> マネージャー（Managers）</h4>
+<p><strong>役割：</strong>予防的・事前対応型の保護</p>
+<p><strong>戦略：</strong></p>
+<ul>
+<li>完璧主義（失敗を防ぐ）</li>
+<li>過度の配慮（拒絶を避ける）</li>
+<li>過活動（感情を感じないようにする）</li>
+<li>コントロール欲求（予測可能性を保つ）</li>
+<li>自己批判（事前に自分を叩く）</li>
+</ul>
+</div>
+
+<div class="protector-type firefighter-type">
+<h4><i class="fas fa-fire-extinguisher"></i> ファイアファイター（Firefighters）</h4>
+<p><strong>役割：</strong>緊急対応型の保護</p>
+<p><strong>戦略：</strong></p>
+<ul>
+<li>過食・過飲酒（痛みを即座に消す）</li>
+<li>自傷行為（内的苦痛の外在化）</li>
+<li>過度の運動（感情の麻痺）</li>
+<li>衝動的行動（注意の転換）</li>
+<li>解離（意識の切断）</li>
+</ul>
+</div>
+</div>
+<p style="margin-top: 15px;"><strong>マネージャーとファイアファイターの関係：</strong>マネージャーが統制を失うと、ファイアファイターが緊急出動する。両者はしばしば対立しながらも、同じ目的（エグザイルの保護）のために働いている。</p>
+</div>
+
+<div class="system-layer layer-exile">
+<div class="layer-title"><i class="fas fa-heart-broken"></i> エグザイル（Exiles）- 追放された部分</div>
+<p><strong>正体：</strong>トラウマ、痛み、恥、見捨てられ感を抱えた部分。多くは幼少期の体験に由来する。</p>
+<p><strong>なぜ「追放」されるのか：</strong>その痛みがあまりにも強烈で、日常生活を脅かすため、プロテクターたちが意識から遠ざけようとする。</p>
+<p><strong>特徴：</strong></p>
+<ul>
+<li>強烈な感情（恐怖、悲しみ、怒り、恥）を持つ</li>
+<li>時間感覚が止まっている（過去のまま）</li>
+<li>「自分には価値がない」「誰も信じられない」などの核心的信念を持つ</li>
+<li>予期せぬトリガーで表面化する</li>
+</ul>
+<p><strong>臨床的重要性：</strong>エグザイルの癒しこそがIFS療法の中核目標。しかし、プロテクターの許可なく直接アクセスすることは、システムを不安定化させる危険がある。</p>
+</div>
+</div>
+</section>
+
+<section>
+<h2><i class="fas fa-gem"></i> セルフの概念：癒しの源泉</h2>
+<p>IFSの最も革新的な概念の一つが「セルフ」です。セルフは<span class="highlight">獲得するものではなく、すでに存在しているもの</span>——ただ部分に覆い隠されているだけ、というのがIFSの根本的な信念です。</p>
+
+<h3><i class="fas fa-check-circle"></i> セルフの8つのC特性</h3>
+<div class="eight-c-grid">
+<div class="c-item">
+<i class="fas fa-heart"></i>
+<h4>Compassion</h4>
+<p>思いやり</p>
+<small>自他への深い共感と優しさ</small>
+</div>
+<div class="c-item">
+<i class="fas fa-search"></i>
+<h4>Curiosity</h4>
+<p>好奇心</p>
+<small>判断せず理解を求める</small>
+</div>
+<div class="c-item">
+<i class="fas fa-eye"></i>
+<h4>Clarity</h4>
+<p>明晰さ</p>
+<small>物事を明確に見る</small>
+</div>
+<div class="c-item">
+<i class="fas fa-spa"></i>
+<h4>Calm</h4>
+<p>穏やかさ</p>
+<small>内的な平静と落ち着き</small>
+</div>
+<div class="c-item">
+<i class="fas fa-award"></i>
+<h4>Confidence</h4>
+<p>自信</p>
+<small>自己への信頼</small>
+</div>
+<div class="c-item">
+<i class="fas fa-fist-raised"></i>
+<h4>Courage</h4>
+<p>勇気</p>
+<small>困難に向き合う強さ</small>
+</div>
+<div class="c-item">
+<i class="fas fa-palette"></i>
+<h4>Creativity</h4>
+<p>創造性</p>
+<small>新しい解決を生み出す</small>
+</div>
+<div class="c-item">
+<i class="fas fa-handshake"></i>
+<h4>Connectedness</h4>
+<p>つながり</p>
+<small>自他との一体感</small>
+</div>
+</div>
+
+<h3><i class="fas fa-question-circle"></i> セルフ主導（Self-leadership）とは</h3>
+<p>セルフ主導状態とは、<span class="highlight">セルフが内的システムの「リーダー」として機能している状態</span>です。</p>
+
+<div class="flow-diagram">
+<div class="flow-step">
+<div class="flow-number">1</div>
+<div class="flow-content">
+<h4>部分主導の状態</h4>
+<p>「失敗が怖い」という部分に完全に支配され、面接を避け続ける。視野が狭く、他の選択肢が見えない。</p>
+</div>
+</div>
+<div class="flow-step">
+<div class="flow-number">2</div>
+<div class="flow-content">
+<h4>セルフ主導への移行</h4>
+<p>「ああ、今『失敗が怖い』という部分が強く出ているな」と気づき、一歩引いて観察できる状態。</p>
+</div>
+</div>
+<div class="flow-step">
+<div class="flow-number">3</div>
+<div class="flow-content">
+<h4>セルフ主導の状態</h4>
+<p>恐怖の部分に好奇心と思いやりを持って接し、「何を守ろうとしているの?」と尋ねられる。同時に「挑戦したい」部分の声も聴き、バランスを取る。</p>
+</div>
+</div>
+</div>
+
+<div class="case-box">
+<h4><i class="fas fa-user-circle"></i> 就労支援での実践例</h4>
+<p><strong>利用者：</strong>「私はダメな人間です。何をやっても失敗します」</p>
+<p><strong>従来の対応：</strong>「そんなことないですよ。あなたには良いところがたくさんあります」（否定・励まし）</p>
+<p><strong>IFS的対応：</strong>「今、『ダメな人間だ』と言っている声が聞こえますね。その声にもう少し注意を向けてみましょうか。その声は何歳くらいに感じますか?」</p>
+<p><strong>効果：</strong>利用者がその声を「自分の一部」として客観視できるようになり、セルフ主導で対話できる可能性が開ける。</p>
+</div>
+</section>
+
+<section>
+<h2><i class="fas fa-route"></i> IFS実践の6ステップ</h2>
+<p>IFSセラピーは、<span class="highlight">セルフが内的システムを癒すプロセスを支援する</span>構造化されたアプローチです。</p>
+
+<div class="flow-diagram">
+<div class="flow-step">
+<div class="flow-number">1</div>
+<div class="flow-content">
+<h4>ターゲット部分の特定</h4>
+<p>今日の作業対象となる部分を見つける。「今、一番気になっている感情や思考は何ですか?」</p>
+</div>
+</div>
+
+<div class="flow-step">
+<div class="flow-number">2</div>
+<div class="flow-content">
+<h4>部分への焦点化</h4>
+<p>その部分により詳しく注意を向ける。「その部分はどんな姿をしていますか? 何歳くらいに見えますか?」</p>
+</div>
+</div>
+
+<div class="flow-step">
+<div class="flow-number">3</div>
+<div class="flow-content">
+<h4>その部分への感情確認</h4>
+<p>セルフがその部分にどう感じているかを確認。「その部分に対して、あなたはどう感じますか?」</p>
+</div>
+</div>
+
+<div class="flow-step">
+<div class="flow-number">4</div>
+<div class="flow-content">
+<h4>部分との対話</h4>
+<p>セルフ主導で部分の意図と懸念を理解する。「あなたは私のために何をしようとしているのですか?」</p>
+</div>
+</div>
+
+<div class="flow-step">
+<div class="flow-number">5</div>
+<div class="flow-content">
+<h4>エグザイルへのアクセスと癒し</h4>
+<p>プロテクターの許可を得て、トラウマを抱えた部分を癒す。<strong>注意：高度な技術を要し、適切な訓練なしには危険。</strong></p>
+</div>
+</div>
+
+<div class="flow-step">
+<div class="flow-number">6</div>
+<div class="flow-content">
+<h4>統合と新しい役割</h4>
+<p>癒された部分が新しい役割を見つけ、システム全体が再編成される。</p>
+</div>
+</div>
+</div>
+
+<div class="warning-box">
+<h4><i class="fas fa-exclamation-triangle"></i> 実践上の重要な注意点</h4>
+<ul>
+<li><strong>訓練の必要性：</strong>IFSは専門的な訓練を要する技法。正式なトレーニングなしにエグザイルワークを行うことは、再トラウマ化のリスクがある</li>
+<li><strong>適用範囲：</strong>就労移行支援では、完全なIFSセラピーではなく、「IFS-informed（IFSに基づいた）」アプローチが現実的</li>
+<li><strong>安全の確保：</strong>激しい解離症状や現在進行形のトラウマがある場合は、IFSの前に安全確立と症状管理が優先</li>
+</ul>
+</div>
+</section>
+
+<section>
+<h2><i class="fas fa-briefcase"></i> 就労移行支援での応用</h2>
+<p>IFSの完全な実践は専門的訓練を要しますが、その<span class="highlight">基本的な視点と言語</span>は、就労移行支援の日常的な支援に有用です。</p>
+
+<h3><i class="fas fa-lightbulb"></i> 明日から使える3つのポイント</h3>
+<div class="flow-diagram">
+<div class="flow-step">
+<div class="flow-number">1</div>
+<div class="flow-content">
+<h4>言語を変える</h4>
+<p>「あなたは不安だ」→「不安を感じている部分がいるんですね」</p>
+</div>
+</div>
+
+<div class="flow-step">
+<div class="flow-number">2</div>
+<div class="flow-content">
+<h4>好奇心を持って尋ねる</h4>
+<p>「その部分は何を守ろうとしていると思いますか?」</p>
+</div>
+</div>
+
+<div class="flow-step">
+<div class="flow-number">3</div>
+<div class="flow-content">
+<h4>セルフの瞬間を認識する</h4>
+<p>利用者が8つのCを示す瞬間に気づき、それを強化する。</p>
+</div>
+</div>
+</div>
+</section>
+
+<section>
+<h2><i class="fas fa-flask"></i> エビデンスの現状</h2>
+<p>IFSは1980年代に開発された比較的新しい療法であり、エビデンス基盤は発展途上です。</p>
+
+<div class="evidence-box">
+<h4><i class="fas fa-chart-line"></i> RCT研究の結果</h4>
+<ul>
+<li><strong>リウマチ患者の研究（Shadick et al., 2013）：</strong>IFSグループは対照群と比較して、身体症状、抑うつ、自己効力感で有意な改善</li>
+<li><strong>PTSDへの効果（Hodgdon et al., 2021）：</strong>PTSD症状の大幅な改善を示した（17名対象の対照群なしパイロット研究）。</li>
+<li><strong>うつ病への効果（Haddock et al., 2017）：</strong>中等度から重度のうつ病患者において有意な改善</li>
+</ul>
+</div>
+
+<div class="warning-box">
+<h4><i class="fas fa-balance-scale"></i> 批判的評価</h4>
+<ul>
+<li><strong>研究数の少なさ：</strong>CBT、DBT、EMDR等の確立された療法と比較して、RCTの数は限定的</li>
+<li><strong>サンプルサイズ：</strong>多くの研究が小規模（n<100）</li>
+<li><strong>長期効果：</strong>2年以上のフォローアップ研究は限定的</li>
+<li><strong>学術的認知：</strong>APAの実証的支持のある治療リストには<strong>まだ含まれていない</strong></li>
+</ul>
+</div>
+</section>
+
+<section>
+<h2><i class="fas fa-balance-scale"></i> 批判的考察と限界</h2>
+<p>どんな優れたアプローチにも限界があります。IFSを盲目的に信奉するのではなく、<span class="highlight">その強みと弱みを理解した上で</span>、批判的に活用することが重要です。</p>
+
+<h3><i class="fas fa-question-circle"></i> 理論的・概念的な課題</h3>
+<ul>
+<li><strong>「部分」は実在するのか、メタファーなのか：</strong>神経科学的には完全に独立した「サブパーソナリティ」の証拠は限定的</li>
+<li><strong>セルフの普遍性：</strong>「セルフ」の概念は西洋的個人主義に基づく可能性</li>
+<li><strong>複雑性と訓練の障壁：</strong>習得に数百時間のトレーニングが必要</li>
+</ul>
+
+<div class="warning-box">
+<h4><i class="fas fa-user-md"></i> IFSが適さない、または慎重を要する場合</h4>
+<ul>
+<li><strong>急性精神病状態：</strong>現実検討能力が著しく低下している場合</li>
+<li><strong>重度の解離性障害：</strong>専門的トレーニングなしには危険</li>
+<li><strong>現在進行中の危機：</strong>安全が確保されていない場合は、IFSの前に危機介入が優先</li>
+</ul>
+</div>
+
+<h3><i class="fas fa-book"></i> 他のアプローチとの統合</h3>
+<p>IFSは単独で用いるよりも、他のエビデンスベースドなアプローチと統合することで、より効果的になる可能性があります。</p>
+<ul>
+<li><strong>IFS + CBT：</strong>部分の認知的歪みに認知再構成を適用</li>
+<li><strong>IFS + DBT：</strong>ファイアファイター部分に代わる適応的スキルの獲得</li>
+<li><strong>IFS + EMDR：</strong>エグザイルの癒しにEMDRのプロトコルを併用</li>
+</ul>
+</section>
+
+<section>
+<h2><i class="fas fa-check-circle"></i> まとめ</h2>
+<div class="intro-box">
+<p style="font-size: 1.1em; margin-bottom: 15px;"><strong>IFSは完璧な療法ではありません。しかし、人間の複雑さを尊重し、内的な知恵を信頼するその姿勢は、あらゆる支援の現場に価値をもたらすものです。</strong></p>
+<p style="margin-bottom: 0;">利用者の内なる声に耳を傾け、それぞれの部分に敬意を払い、セルフ主導の回復を信じる——この基本的な態度が、就労移行支援の質を高める一助となることを願っています。</p>
+</div>
+</section>
+
+<div class="references">
+<h3><i class="fas fa-book"></i> 参考文献・リソース</h3>
+<div class="reference-item">
+<strong>基本文献</strong>
+<ul>
+<li>Schwartz, R. C., & Sweezy, M. (2020). <em>Internal Family Systems Therapy (2nd ed.).</em> Guilford Press.</li>
+<li>Anderson, F. G., Sweezy, M., & Schwartz, R. C. (2017). <em>Internal Family Systems Skills Training Manual.</em> PESI Publishing.</li>
+</ul>
+</div>
+<div class="reference-item">
+<strong>主要な研究論文</strong>
+<ul>
+<li>Shadick, N. A., et al. (2013). A randomized controlled trial of an internal family systems-based psychotherapeutic intervention on outcomes in rheumatoid arthritis. <em>The Journal of Rheumatology, 40</em>(11), 1831-1841.</li>
+<li>Hodgdon, H. B., et al. (2021). Internal Family Systems (IFS) Therapy for Posttraumatic Stress Disorder (PTSD) among Survivors of Multiple Childhood Trauma: A Pilot Effectiveness Study. <em>Journal of Aggression, Maltreatment & Trauma.</em></li>
+</ul>
+</div>
+<div class="reference-item">
+<strong>オンラインリソース</strong>
+<ul>
+<li><a href="https://ifs-institute.com/" target="_blank">IFS Institute 公式サイト（英語）</a></li>
+<li><a href="https://www.foundationifs.org/" target="_blank">Foundation for Self Leadership</a></li>
+</ul>
+</div>
+</div>
+</div>
+
+<footer>
+<p>このガイドは就労移行支援スタッフの理解促進を目的とした教育資料です。</p>
+<p>IFSの実践には適切なトレーニングが必要であり、本資料は専門的訓練の代替とはなりません。</p>
+<p style="margin-top: 15px;">© 岡村雄一郎</p>
+</footer>
+
+<script>
+document.querySelectorAll('.accordion-header').forEach(header => {
+    header.addEventListener('click', function() {
+        const content = this.nextElementSibling;
+        const isActive = this.classList.contains('active');
+        this.classList.toggle('active');
+        if (!isActive) {
+            content.style.maxHeight = content.scrollHeight + 'px';
+        } else {
+            content.style.maxHeight = null;
+        }
+    });
+});
+
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        const target = document.querySelector(this.getAttribute('href'));
+        if (target) {
+            target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+    });
+});
+
+window.addEventListener('load', function() {
+    document.querySelectorAll('section').forEach((section, index) => {
+        section.style.animationDelay = `${index * 0.1}s`;
+    });
+});
+</script>
+</body>
+</html>
